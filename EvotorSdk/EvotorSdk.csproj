@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net462;net6.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Denis Alekseev</Authors>
+    <Copyright>Denis Alekseev</Copyright>
+    <Company>https://github.com/denalekseev</Company>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PackageId>EvotorSdk</PackageId>
+    <PackageProjectUrl>https://github.com/restub/EvotorSdk</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/restub/EvotorSdk.git</RepositoryUrl>
+    <PackageTags>Evotor.ru; Evotor; restub; rest; api; sdk; client; framework; tracing; logging</PackageTags>
+    <PackageIcon>EvotorSdk.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Title>EvotorSdk</Title>
+    <Description>Evotor delivery company REST API client with tracing support.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReleaseNotes>Beta release. What's new:
+
+    v0.6
+    — Fixed Content-type header issue, added package logo icon and readme.
+
+    v0.5
+    — Ported to restub library, reduced the code base, unified error handling.
+
+    v0.4
+    — Improved error handling, implemented CreateDeliveryOrder.
+
+    v0.3
+    — Implemented tariff calculation, changed the namespace to EvotorSdk.
+
+    v0.2
+    — Initial beta release: authentication, GetRegions, GetCities, etc.
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="restub" Version="0.17.5" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\EvotorSdk.png" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+</Project>
