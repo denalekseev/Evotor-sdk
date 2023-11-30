@@ -7,7 +7,7 @@ namespace EvotorSdk.DataContracts
     public class StoresResponse
     {
         [DataMember(Name = "items")]
-        public StoresItemResponse[] Items { get; set; }
+        public IList<StoreItemResponse> Items { get; set; }
 
         [DataMember(Name = "paging")]
         public PagingItemResponse Paging { get; set; }

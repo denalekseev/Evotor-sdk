@@ -1,5 +1,7 @@
 ﻿using EvotorSdk.DataContracts;
 using EvotorSdk.DataContracts.Documents;
+using EvotorSdk.DataContracts.Employees;
+using EvotorSdk.DataContracts.Stores;
 using RestSharp;
 using Restub.Toolbox;
 
@@ -14,20 +16,16 @@ namespace EvotorSdk
         /// Получить список магазинов
         /// https://developer.evotor.ru/docs/rest_stores.html
         /// </summary>
-        public StoresResponse GetStores() =>
-            Get<StoresResponse>("/stores", InitRequest);
+        public StoresResponse GetStores(StoresRequest request) =>
+            Get<StoresResponse>("/stores", r => AddQueryString(request, r));
 
-        public void InitRequest(IRestRequest initReq)
-        {
-            initReq.AddHeader("Content-Type", "application/vnd.evotor.v2+json");
-            initReq.AddHeader("Accept", "application/vnd.evotor.v2+json");
-        }
+        /// <summary>
+        /// Получить список сотрудников
+        /// https://developer.evotor.ru/docs/rest_employees.html
+        /// </summary>
+        public EmployeesResponse GetEmployees(EmployeesRequest request) =>
+            Get<EmployeesResponse>("/employees", r => AddQueryString(request, r));
 
-        public void AddQueryString(StoreDocumentsRequest req, IRestRequest initReq)
-        {
-            InitRequest(initReq);
-            initReq.AddQueryString(req);
-        }
 
         /// <summary>
         /// Получить список документов
@@ -36,5 +34,16 @@ namespace EvotorSdk
         public StoreDocumentsResponse GetStoreDocuments(string storeID, StoreDocumentsRequest request) =>
             Get<StoreDocumentsResponse>($"/stores/{storeID}/documents", r => AddQueryString(request, r));
 
+        public void InitRequest(IRestRequest initReq)
+        {
+            initReq.AddHeader("Content-Type", "application/vnd.evotor.v2+json");
+            initReq.AddHeader("Accept", "application/vnd.evotor.v2+json");
+        }
+
+        public void AddQueryString(object req, IRestRequest initReq)
+        {
+            InitRequest(initReq);
+            initReq.AddQueryString(req);
+        }
     }
 }

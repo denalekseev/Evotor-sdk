@@ -5,7 +5,7 @@
 [![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fyallie%2FEvotorSdk%2Fbadge&label=build&logo=none)](https://actions-badge.atrox.dev/yallie/EvotorSdk/goto)
 [![.NET Framework 4.62](https://img.shields.io/badge/.net-v4.62-yellow)](https://www.microsoft.com/ru-RU/download/details.aspx?id=53321)
 [![NuGet](https://img.shields.io/nuget/v/EvotorSdk.svg)](https://nuget.org/packages/EvotorSdk)
-[![DotNetFiddle](https://img.shields.io/badge/try-online-blue)](https://dotnetfiddle.net/ko50vv)
+[![AutoGenerateClasses](https://jsonutils.com/)
 
 # Getting started
 

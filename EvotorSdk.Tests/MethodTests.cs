@@ -15,10 +15,10 @@ namespace EvotorSdk.Tests
         [Test, Ordered]
         public void GetStores()
         {
-            var regions = Client.GetStores();
+            var regions = Client.GetStores(new DataContracts.Stores.StoresRequest());
             Assert.That(regions, Is.Not.Null);
             Assert.That(regions.Items, Is.Not.Null);
-            Assert.That(regions.Items.Length, Is.GreaterThan(0));
+            Assert.That(regions.Items.Count, Is.GreaterThan(0));
         }
     }
 }

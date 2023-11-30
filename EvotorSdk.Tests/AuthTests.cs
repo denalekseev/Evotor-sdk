@@ -14,7 +14,7 @@ namespace EvotorSdk.Tests
             var trace = new StringBuilder();
             client.Tracer += (format, args) => trace.AppendFormat(format, args);
 
-            var regions = client.GetStores();
+            var regions = client.GetStores(new DataContracts.Stores.StoresRequest());
             Assert.That(regions, Is.Not.Null);
             Assert.That(regions.Items, Is.Not.Null);
             Assert.That(regions.Items, Is.GreaterThan(0));

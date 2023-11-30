@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace EvotorSdk.DataContracts
 {
     [DataContract]
-    public class StoresItemResponse
+    public class StoreItemResponse
     {
         [DataMember(Name = "id")]
         public string ID { get; set; }
